@@ -1,26 +1,16 @@
-:root {
-  --drakkar-ink: #17201c;
-  --drakkar-green: #233b32;
-  --drakkar-dark: #10251e;
-  --drakkar-cream: #f1eee6;
-  --drakkar-paper: #faf9f5;
-  --drakkar-gold: #ad8b5b;
-  --drakkar-line: #d8d5cd;
-  --drakkar-muted: #69716d;
-}
-* {
+ * {
   box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
 }
 body {
-  background: var(--drakkar-paper);
-  color: var(--drakkar-ink);
+  background: var(--color-background);
+  color: var(--color-text);
   margin: 0;
 }
 .storefront {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   overflow: hidden;
 }
 .storefront a {
@@ -29,8 +19,8 @@ body {
 }
 .site-header {
   align-items: center;
-  background: rgba(250, 249, 245, 0.96);
-  border-bottom: 1px solid rgba(23, 32, 28, 0.1);
+  background: var(--color-white-glass);
+  border-bottom: 1px solid var(--color-overlay-soft);
   display: flex;
   height: 80px;
   justify-content: space-between;
@@ -48,12 +38,12 @@ body {
   gap: clamp(20px, 3vw, 42px);
 }
 .site-nav a {
-  color: #4c5551;
+  color: var(--color-text-secondary);
   font-size: 13px;
   position: relative;
 }
 .site-nav a::after {
-  background: var(--drakkar-gold);
+  background: var(--color-secondary);
   bottom: -9px;
   content: "";
   height: 1px;
@@ -79,14 +69,14 @@ body {
   gap: 7px;
 }
 .whatsapp > span {
-  background: #35a866;
+  background: var(--color-success);
   border-radius: 50%;
   height: 8px;
   width: 8px;
 }
 .action-link {
   align-items: center;
-  border: 1px solid var(--drakkar-green);
+  border: 1px solid var(--color-primary);
   display: inline-flex;
   font-size: 11px;
   font-weight: 700;
@@ -102,26 +92,28 @@ body {
     transform 0.25s ease;
 }
 .action-link--solid {
-  background: var(--drakkar-green);
-  color: white !important;
+  background: var(--color-primary);
+  color: var(--color-white) !important;
 }
 .action-link--solid:hover {
-  background: var(--drakkar-dark);
+  background: var(--color-primary);
   transform: translateY(-2px);
 }
 .action-link--outline:hover {
-  background: rgba(35, 59, 50, 0.06);
+  background: var(--color-overlay-soft);
 }
 .action-link--light {
-  background: var(--drakkar-paper);
-  border-color: var(--drakkar-paper);
-  color: var(--drakkar-green) !important;
+  background: var(--color-background);
+  border-color: var(--color-background);
+  color: var(--color-primary) !important;
 }
 .menu-toggle,
 .site-nav__mobile-action {
   display: none;
 }
 .hero {
+  background: var(--hero-gradient);
+  color: var(--color-white);
   display: grid;
   grid-template-columns: 46% 54%;
   min-height: 680px;
@@ -131,7 +123,7 @@ body {
   padding: 80px clamp(30px, 6vw, 96px);
 }
 .eyebrow {
-  color: var(--drakkar-gold);
+  color: var(--color-secondary);
   display: block;
   font-size: 10px;
   font-weight: 700;
@@ -141,7 +133,7 @@ body {
 }
 .hero h1,
 .section-heading h2 {
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: var(--font-display);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 1.04;
@@ -152,11 +144,19 @@ body {
   max-width: 630px;
 }
 .hero__content > p {
-  color: var(--drakkar-muted);
+  color: var(--color-white-muted);
   font-size: 16px;
   line-height: 1.75;
   margin: 28px 0 36px;
   max-width: 510px;
+}
+.hero .action-link--solid {
+  background: var(--color-secondary);
+  border-color: var(--color-secondary);
+}
+.hero .action-link--outline {
+  border-color: var(--color-white);
+  color: var(--color-white);
 }
 .hero__actions {
   display: flex;
@@ -171,7 +171,7 @@ body {
   height: 100%;
 }
 .hero__edition {
-  background: var(--drakkar-paper);
+  background: var(--color-background);
   bottom: 0;
   font-size: 9px;
   left: 0;
@@ -181,17 +181,17 @@ body {
 }
 .photo-placeholder {
   align-items: center;
-  background-color: #d5cfc3;
+  background-color: var(--color-background);
   background-image:
-    linear-gradient(135deg, rgba(255, 255, 255, 0.34), transparent 48%),
+    linear-gradient(135deg, var(--color-white-highlight), transparent 48%),
     repeating-linear-gradient(
       45deg,
       transparent,
       transparent 34px,
-      rgba(255, 255, 255, 0.1) 34px,
-      rgba(255, 255, 255, 0.1) 35px
+      var(--color-white-soft) 34px,
+      var(--color-white-soft) 35px
     );
-  color: rgba(23, 32, 28, 0.6);
+  color: var(--color-text-secondary);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -202,7 +202,7 @@ body {
 }
 .photo-placeholder::before,
 .photo-placeholder::after {
-  border-left: 1px solid rgba(23, 32, 28, 0.13);
+  border-left: 1px solid var(--color-overlay-medium);
   content: "";
   height: 130%;
   position: absolute;
@@ -216,14 +216,14 @@ body {
   z-index: 1;
 }
 .photo-placeholder__icon {
-  border: 1px solid rgba(23, 32, 28, 0.45);
-  font-family: Georgia, serif;
+  border: 1px solid var(--color-overlay-medium);
+  font-family: var(--font-display);
   margin-bottom: 20px;
   padding: 7px 10px;
   transform: rotate(45deg);
 }
 .photo-placeholder strong {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 18px;
   font-weight: 400;
 }
@@ -236,7 +236,7 @@ body {
   min-height: 285px;
 }
 .categories {
-  background: var(--drakkar-cream);
+  background: var(--color-background);
   padding: 110px clamp(24px, 7vw, 110px) 125px;
 }
 .section-heading {
@@ -254,7 +254,7 @@ body {
   max-width: 750px;
 }
 .section-heading p {
-  color: var(--drakkar-muted);
+  color: var(--color-text-secondary);
   font-size: 14px;
   line-height: 1.7;
   max-width: 520px;
@@ -265,44 +265,48 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 .category-card {
-  background: var(--drakkar-paper);
+  background: var(--color-surface);
+  border: var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
   transition:
     box-shadow 0.3s ease,
     transform 0.3s ease;
 }
 .category-card:hover {
-  box-shadow: 0 20px 45px rgba(23, 32, 28, 0.1);
+  box-shadow: var(--shadow-lg);
   transform: translateY(-5px);
 }
 .category-card:nth-child(2) .photo-placeholder,
 .category-card:nth-child(5) .photo-placeholder {
-  background-color: #bcaea2;
+  background-color: var(--color-placeholder-blue);
 }
 .category-card:nth-child(3) .photo-placeholder,
 .category-card:nth-child(6) .photo-placeholder {
-  background-color: #aeb6aa;
+  background-color: var(--color-placeholder-indigo);
 }
 .category-card__content {
   padding: 25px 26px 28px;
 }
 .category-card__content > span {
-  color: var(--drakkar-gold);
+  color: var(--color-secondary);
   font-size: 9px;
   letter-spacing: 0.15em;
 }
 .category-card h3 {
-  font-family: Georgia, serif;
+  font-family: var(--font-display);
   font-size: 25px;
   font-weight: 400;
   margin: 9px 0 8px;
 }
 .category-card p {
-  color: var(--drakkar-muted);
+  color: var(--color-text-secondary);
   font-size: 13px;
   margin: 0;
 }
 .category-card a {
-  border-bottom: 1px solid var(--drakkar-line);
+  border-bottom: 1px solid var(--color-border);
   display: flex;
   font-size: 10px;
   font-weight: 700;
@@ -313,8 +317,8 @@ body {
   text-transform: uppercase;
 }
 .site-footer {
-  background: var(--drakkar-dark);
-  color: #b6c1bc;
+  background: var(--color-primary);
+  color: var(--color-white-muted);
   padding: 78px clamp(24px, 7vw, 110px) 28px;
 }
 .site-footer__grid {
@@ -329,7 +333,7 @@ body {
   gap: 10px;
 }
 .site-footer__brand strong {
-  color: white;
+  color: var(--color-white);
   font-size: 16px;
   letter-spacing: 0.17em;
 }
@@ -339,7 +343,7 @@ body {
   max-width: 340px;
 }
 .site-footer h2 {
-  color: white;
+  color: var(--color-white);
   font-size: 10px;
   letter-spacing: 0.16em;
   margin: 0 0 16px;
@@ -350,10 +354,10 @@ body {
   font-size: 12px;
 }
 .site-footer a:hover {
-  color: white;
+  color: var(--color-white);
 }
 .site-footer__bottom {
-  border-top: 1px solid #2c4139;
+  border-top: 1px solid var(--color-white-soft);
   display: flex;
   justify-content: space-between;
   margin-top: 65px;
@@ -378,13 +382,13 @@ body {
     padding: 10px;
   }
   .menu-toggle span {
-    background: var(--drakkar-ink);
+    background: var(--color-text);
     height: 1px;
     width: 26px;
   }
   .site-nav--open {
-    background: var(--drakkar-paper);
-    border-bottom: 1px solid var(--drakkar-line);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
     display: flex;
     flex-direction: column;
     gap: 24px;
@@ -399,7 +403,7 @@ body {
   }
   .site-nav__mobile-action {
     display: block !important;
-    color: var(--drakkar-gold) !important;
+    color: var(--color-secondary) !important;
   }
   .hero {
     grid-template-columns: 1fr 1fr;

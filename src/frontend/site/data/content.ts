@@ -2,18 +2,21 @@ import type { Category, NavigationItem, SocialLink } from "../types/site";
 
 export const siteContent = {
   brand: "TIENDAS DRAKKAR",
+
   navigation: [
     { label: "Inicio", href: "#inicio" },
-    { label: "Catálogo", href: "#catalogo" },
+    { label: "Catálogo", href: "/catalogo" },
     { label: "Nosotros", href: "#nosotros" },
     { label: "Contacto", href: "#contacto" },
   ] satisfies NavigationItem[],
+
   actions: {
     whatsapp: "WhatsApp",
     quote: "Cotizar",
     catalog: "Ver catálogo",
     requestQuote: "Solicitar cotización",
   },
+
   hero: {
     eyebrow: "Mobiliario para vivir mejor",
     title: "Diseño que transforma tu manera de habitar.",
@@ -22,12 +25,14 @@ export const siteContent = {
     imageLabel: "Fotografía principal de Tiendas Drakkar",
     edition: "DRAKKAR · HOME COLLECTION",
   },
+
   categoriesIntro: {
     eyebrow: "Nuestras colecciones",
     title: "Encuentra la pieza ideal para cada espacio.",
     description:
       "Explora muebles que combinan carácter, comodidad y una estética atemporal.",
   },
+
   categories: [
     {
       name: "Salas",
@@ -66,6 +71,7 @@ export const siteContent = {
       href: "#contacto",
     },
   ] satisfies Category[],
+
   footer: {
     statement:
       "Muebles con diseño, confort y carácter para crear hogares que se sienten propios.",
@@ -76,13 +82,17 @@ export const siteContent = {
     email: "hola@tiendasdrakkar.mx",
     location: "Pachuca, Hidalgo, México",
     privacy: "Aviso de privacidad",
-    copyright: "© 2026 Tiendas Drakkar. Todos los derechos reservados.",
+    copyright:
+      "© 2026 Tiendas Drakkar. Todos los derechos reservados.",
   },
+
   socials: [
     { label: "Instagram", href: "#" },
     { label: "Facebook", href: "#" },
     { label: "TikTok", href: "#" },
   ] satisfies SocialLink[],
+
   placeholderCaption: "ESPACIO PARA FOTOGRAFÍA REAL",
+
   whatsappUrl: "https://wa.me/527710000000",
 };

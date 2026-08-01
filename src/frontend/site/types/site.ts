@@ -1,4 +1,7 @@
-export type NavigationItem = { label: string; href: string };
+export type NavigationItem = {
+  label: string;
+  href: string;
+};
 
 export type Category = {
   name: string;
@@ -7,4 +10,7 @@ export type Category = {
   href: string;
 };
 
-export type SocialLink = { label: string; href: string };
+export type SocialLink = {
+  label: string;
+  href: string;
+};
