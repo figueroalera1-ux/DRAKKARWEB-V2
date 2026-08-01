@@ -1,3 +1,5 @@
+import { Site } from "../frontend/site";
+
 export default function Home() {
-  return null;
+  return <Site />;
 }
